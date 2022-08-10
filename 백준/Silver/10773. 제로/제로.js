@@ -10,5 +10,5 @@ arr.map((pushNumber) => {
   }
   sum.push(pushNumber)
 })
-let answer = sum.length ? sum.reduce((pre, cur) => pre + cur,0) : 0
+let answer = sum.reduce((pre, cur) => pre + cur,0) 
 console.log(answer)
