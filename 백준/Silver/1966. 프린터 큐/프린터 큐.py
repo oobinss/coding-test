@@ -5,16 +5,18 @@ for _ in range(t):
     data = list(map(int, input().split()))
     
     result = 1
-    while data:
+    while True:
         if data[0] < max(data):
             data.append(data.pop(0))
-
+            if m == 0:
+                m = len(data) - 1
+            else:
+                m -= 1
         else:
-            if m == 0: break
-
-            data.pop(0)
-            result += 1
-
-        m = m - 1 if m > 0 else len(data) - 1
-
-    print(result)
+            if m == 0:
+                print(result)
+                break
+            else:
+                data.pop(0)
+                result += 1
+                m -= 1
